@@ -63,7 +63,7 @@ const AboutPage = () => {
         </div>
       </div>
 
-      <div className=" bg-primary lg:mt-4 text-white  px-3 py-8 md:px-24 md:py-20">
+      <div className=" bg-primary lg:mt-4 text-white px-3 pl-4 py-8 md:px-24 md:py-20">
         <div className="my-4">
           <div className="flex mt-6">
             <span>
@@ -75,7 +75,7 @@ const AboutPage = () => {
             </span>
             <h1 className="font-bold font-roboto text-3xl py-3">Our Mission</h1>
           </div>
-          <p className="text-base  font-roboto tracking-wider">
+          <p className="text-base font-roboto tracking-wider">
             Our mission is to serve the health care needs of our community by
             providing comprehensive care to prevent illness, relieve suffering,
             restore health and promote well being during each life stage. We
@@ -96,7 +96,7 @@ const AboutPage = () => {
             </span>
             <h1 className="font-bold font-roboto text-3xl py-3">Our Vision</h1>
           </div>
-          <p className="text-base  font-roboto tracking-wider">
+          <p className="text-base font-roboto tracking-wider">
             We will be the premier health care provider in the Nation, by
             building upon our strengths of personalized care, technologically
             advanced services and effective resource management.
@@ -114,7 +114,7 @@ const AboutPage = () => {
             </span>
             <h1 className="font-bold font-roboto text-3xl py-3">Core Values</h1>
           </div>
-          <p className="text-base  font-roboto tracking-wider">
+          <p className="text-base font-roboto tracking-wider">
             Oriental Hospital will achieve its Mission and Vision through the
             core values of: Caring | Quality | Leadership | Community
             Partnership | Cost-Effectiveness | Technology
