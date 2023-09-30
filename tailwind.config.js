@@ -24,9 +24,23 @@ module.exports = {
             overflow: "hidden",
           },
         },
+        slideLeft: {
+          "0%": {
+            transform: "translateX(-1250px)",
+            opacity: "0",
+            overflow: "hidden",
+          },
+          "100%": {
+            transform: "translateX(0)",
+            opacity: "1",
+            overflow: "hidden",
+          },
+        },
       },
       animation: {
         slide: "slide 750ms linear 1",
+        slideSlow: "slide 1s linear 1",
+        slideLeftSlow: "slideLeft 1s linear 1",
       },
     },
   },
