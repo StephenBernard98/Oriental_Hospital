@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <section className="relative overflow-x-hidden mt-20">
+    <section className="relative overflow-x-hidden mt-[4.4rem] md:mt-20">
       <div
         style={{
           backgroundImage: `url("https://themewagon.github.io/orthoc/images/hero-bg.png")`,

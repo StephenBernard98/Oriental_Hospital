@@ -25,14 +25,19 @@ const Nav = () => {
     <div className="">
       <div className="fixed top-0 w-full z-20 transition-all duration-500 overflow-x-hidden  bg-gradient-to-r from-[#2db492] to-[#09c09bad] ">
         <nav>
-          <div className="text-white py-6 flex justify-around">
-            <div>
-              <Link to="/">
-                <h1 className="font-bold font-roboto text-2xl tracking-wide cursor-pointer">
+          <div className="text-white py-2 flex justify-around items-center">
+            <Link to="/">
+              <div className="flex items-center">
+                <img
+                  src="https://static.vecteezy.com/system/resources/previews/006/817/240/non_2x/creative-abstract-modern-clinic-hospital-logo-design-colorful-gradient-clinic-logo-design-free-vector.jpg"
+                  alt="hospital_logo"
+                  className="w-14 md:w-16 mr-3 rounded-full"
+                />
+                <h1 className="font-bold font-roboto text-2xl tracking-wide cursor-pointer hidden md:inline">
                   ORIENTAL HOSPITAL
                 </h1>
-              </Link>
-            </div>
+              </div>
+            </Link>
             <div className="uppercase text-xl hidden lg:flex">
               <ul className="flex">
                 <Link to="/">

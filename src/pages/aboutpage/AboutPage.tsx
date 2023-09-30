@@ -1,51 +1,15 @@
-import { useState, useEffect } from "react";
-import { about_img } from "./AboutData";
-import { BsChevronCompactRight, BsChevronCompactLeft } from "react-icons/bs";
+import { useEffect } from "react";
 import AboutSlides from "./AboutSlides";
 
 const AboutPage = () => {
-  const [imgData, setImgData] = useState(about_img);
-
   useEffect(() => {
+    document.title = "About Page";
     window.scrollTo(0, 0);
   }, []);
 
-  useEffect(() => {
-    const intervalId = setInterval(nextSlide, 3000);
-    return () => clearInterval(intervalId);
-  }, []);
-
-  const prevSlide = () => {
-    var slider = document.getElementById("slider");
-    if (slider !== null) {
-      slider.scrollLeft = slider.scrollLeft - getScrollAmount();
-    }
-  };
-
-  const nextSlide = () => {
-    var slider = document.getElementById("slider");
-    if (slider !== null) {
-      slider.scrollLeft = slider.scrollLeft + getScrollAmount();
-
-      // Check if you've reached the end and reset to the beginning
-      if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
-        slider.scrollLeft = 0;
-      }
-    }
-  };
-
-  // Define a function to get the scroll amount based on screen size
-  const getScrollAmount = () => {
-    if (window.innerWidth >= 768) {
-      return 350; // For screens wider than or equal to 768px
-    } else {
-      return 200; // For screens narrower than 768px
-    }
-  };
-
   return (
     <section className="">
-      <div className="relative mt-20 max-w-[1250px] mx-auto w-full">
+      <div className="relative mt-[4.5rem] md:mt-20 max-w-[1250px] mx-auto w-full">
         <div
           className="relative lg:mt-24 h-80"
           style={{
@@ -122,7 +86,9 @@ const AboutPage = () => {
         </div>
       </div>
       <div className="my-6">
-        <h1 className="text-4xl font-bold font-mooli text-center">Our Gallery</h1>
+        <h1 className="text-4xl font-bold font-mooli text-center">
+          Our Gallery
+        </h1>
       </div>
       <AboutSlides />
     </section>

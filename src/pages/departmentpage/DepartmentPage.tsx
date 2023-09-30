@@ -11,7 +11,7 @@ const DepartmentPage = () => {
     document.title = "Department";
     window.scrollTo(0, 0);
   }, []);
-  
+
   const handleClick = () => {
     setSlideOut(true);
     setTimeout(() => {
@@ -69,9 +69,9 @@ const DepartmentPage = () => {
                 provide excellent preventive, promotive.
               </p>
               <Link to="/comm-health">
-              <button className="bg-primary text-lg px-8 py-2 mt-1 rounded-xl hover-button">
-                Read More
-              </button>
+                <button className="bg-primary text-lg px-8 py-2 mt-1 rounded-xl hover-button">
+                  Read More
+                </button>
               </Link>
             </div>
 
@@ -88,9 +88,11 @@ const DepartmentPage = () => {
                 The department of orthopaedics was created out of the department
                 of surgery in 2016.
               </p>
-              <button className="bg-primary text-lg px-8 py-2 mt-1 rounded-xl hover-button">
-                Read More
-              </button>
+              <Link to="/orthopaedics">
+                <button className="bg-primary text-lg px-8 py-2 mt-1 rounded-xl hover-button">
+                  Read More
+                </button>
+              </Link>
             </div>
 
             <div className="bg-slate-100 p-5 rounded-lg flex flex-col  items-center">
@@ -106,9 +108,11 @@ const DepartmentPage = () => {
                 We provides comprehensive diagnostic imaging and interventional
                 services, trains the next generation.
               </p>
-              <button className="bg-primary text-lg px-8 py-2 mt-1 rounded-xl hover-button">
-                Read More
-              </button>
+              <Link to="/radiology">
+                <button className="bg-primary text-lg px-8 py-2 mt-1 rounded-xl hover-button">
+                  Read More
+                </button>
+              </Link>
             </div>
 
             <div className="bg-slate-100 p-5 rounded-lg flex flex-col  items-center">
@@ -124,9 +128,11 @@ const DepartmentPage = () => {
                 Quality health care delivery is delivering the right care, to
                 the right patient, in the right manner, in the right place
               </p>
-              <button className="bg-primary text-lg px-8 py-2 mt-1 rounded-xl hover-button">
-                Read More
-              </button>
+              <Link to="/quality-assurance">
+                <button className="bg-primary text-lg px-8 py-2 mt-1 rounded-xl hover-button">
+                  Read More
+                </button>
+              </Link>
             </div>
 
             <div className="bg-slate-100 p-5 rounded-lg flex flex-col  items-center">
@@ -139,12 +145,16 @@ const DepartmentPage = () => {
                 Intensive Care Unit
               </h1>
               <p className="p-1 text-center">
-                Community Health & Primary Health Care Department strives to
-                provide excellent preventive, promotive.
+                Also known as Critical Care Unit (CCU), our ICU provides
+                intensive care treatment to patients with severe and
+                life-threatening illness and injuries that require close
+                monitoring and support.
               </p>
-              <button className="bg-primary text-lg px-8 py-2 mt-1 rounded-xl hover-button">
-                Read More
-              </button>
+              <Link to="/intensive-care">
+                <button className="bg-primary text-lg px-8 py-2 mt-1 rounded-xl hover-button">
+                  Read More
+                </button>
+              </Link>
             </div>
 
             <div className="bg-slate-100 p-5 rounded-lg flex flex-col  items-center">
@@ -160,9 +170,11 @@ const DepartmentPage = () => {
                 Community Health & Primary Health Care Department strives to
                 provide excellent preventive, promotive.
               </p>
-              <button className="bg-primary text-lg px-8 py-2 mt-1 rounded-xl hover-button">
-                Read More
-              </button>
+              <Link to="/dentistry">
+                <button className="bg-primary text-lg px-8 py-2 mt-1 rounded-xl hover-button">
+                  Read More
+                </button>
+              </Link>
             </div>
           </div>
         </div>
