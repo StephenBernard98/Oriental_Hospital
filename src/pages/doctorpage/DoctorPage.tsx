@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { doctorData } from "./doctorData";
 import "../doctorpage/doctorPage.css";
 import { Doctor } from "../../types";
-import Modal from "../../components/modals/Modal"; 
-
+import Modal from "../../components/modals/Modal";
+import { RiCloseCircleLine } from "react-icons/ri";
 
 const DoctorPage = () => {
   const [doctor, setDoctor] = useState(doctorData);
@@ -15,14 +15,14 @@ const DoctorPage = () => {
     window.scrollTo(0, 0);
   }, []);
 
-   const openModal = (doctor : Doctor) => {
-     setSelectedDoctor(doctor);
+  const openModal = (doctor: Doctor) => {
+    setSelectedDoctor(doctor);
   };
-  
-   const closeModal = () => {
-     setSelectedDoctor(null);
-     setIsModalOpen(false);
-   };
+
+  const closeModal = () => {
+    setSelectedDoctor(null);
+    setIsModalOpen(false);
+  };
 
   return (
     <main className="mt-[4.5rem] md:mt-20">
@@ -41,6 +41,7 @@ const DoctorPage = () => {
       </div>
       <section className="max-w-[1250px]  mx-auto mt-7">
         <div>
+          <h1 className="font-bold text-2xl text-center text-gray-500 mb-3 md:mb-5">Click Image for Info</h1>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-y-5">
             {doctor.map((doctors) => (
               <div
@@ -52,8 +53,9 @@ const DoctorPage = () => {
                     src={doctors.img}
                     alt="doctors"
                     onClick={() => openModal(doctors)}
+                    className="cursor-pointer"
                   />
-                  <p className="mt-2">{doctors.name}</p>
+                  <p className="mt-2 font-semibold">{doctors.name}</p>
                   <p className="text-gray-500">{doctors.field}</p>
                 </div>
               </div>
@@ -61,15 +63,43 @@ const DoctorPage = () => {
           </div>
         </div>
       </section>
-     {selectedDoctor && (
-        <Modal closeModal={closeModal}>
-          <div>
-            <div>{selectedDoctor.name}</div>
-            <div>{selectedDoctor.field}</div>
-            {/* Add other doctor information here */}
+      {selectedDoctor && (
+        <Modal>
+          <div className="relative">
+            <RiCloseCircleLine
+              onClick={closeModal}
+              className="cursor-pointer absolute text-3xl md:text-5xl lg:text-3xl top-2 right-0 stroke-1"
+            />
+            <div className="flex flex-col lg:flex-row text-gray-600">
+              <div className="md:mr-6 ">
+                <img src={selectedDoctor.img} alt="Doctor" className="w-full" />
+              </div>
+              <div className="flex-1 mt-4">
+                <h1 className="uppercase text-xl md:text-2xl my-1 font-bold text-primary">
+                  {selectedDoctor.name}
+                </h1>{" "}
+                <p className="my-2 text-base">{selectedDoctor.field}</p>
+                <hr
+                  style={{
+                    color: "#c7c4c4",
+                    backgroundColor: "#c7c4c4",
+                    height: ".5px",
+                    border: "none",
+                    marginBottom: "1rem",
+                  }}
+                />
+                {selectedDoctor.about.split("\n").map((paragraph, index) => (
+                  <div key={index}>
+                    <p>{paragraph}</p>
+                    {index < selectedDoctor.about.split("\n").length - 1 && (
+                      <br />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </Modal>
-        
       )}
     </main>
   );
