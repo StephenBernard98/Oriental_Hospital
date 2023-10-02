@@ -9,6 +9,7 @@ import Radiology from "./pages/departmentpage/departments/Radiology";
 import QualityAssurance from "./pages/departmentpage/departments/QualityAssurance";
 import IntensiveCare from "./pages/departmentpage/departments/IntensiveCare";
 import Dentistry from "./pages/departmentpage/departments/Dentistry";
+import DoctorPage from "./pages/doctorpage/DoctorPage";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/dept" element={<DepartmentPage />} />
-        {/* <Route path="/doctor" element={<DoctorsPage />} /> */}
+        <Route path="/doctor" element={<DoctorPage />} />
         <Route path="/comm-health" element={<CommunityHealth />} />
         <Route path="/orthopaedics" element={<Orthopaedics />} />
         <Route path="/radiology" element={<Radiology />} />
@@ -25,8 +26,6 @@ function App() {
         <Route path="/intensive-care" element={<IntensiveCare />} />
         <Route path="/dentistry" element={<Dentistry />} />
       </Routes>
-
-      {/* <AboutImg /> */}
     </div>
   );
 }
