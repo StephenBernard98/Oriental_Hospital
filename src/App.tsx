@@ -10,6 +10,7 @@ import QualityAssurance from "./pages/departmentpage/departments/QualityAssuranc
 import IntensiveCare from "./pages/departmentpage/departments/IntensiveCare";
 import Dentistry from "./pages/departmentpage/departments/Dentistry";
 import DoctorPage from "./pages/doctorpage/DoctorPage";
+import ContactPage from "./pages/contactpage/ContactPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/quality-assurance" element={<QualityAssurance />} />
         <Route path="/intensive-care" element={<IntensiveCare />} />
         <Route path="/dentistry" element={<Dentistry />} />
+        <Route path="/contact" element={<ContactPage/>}/>
       </Routes>
     </div>
   );

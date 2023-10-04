@@ -8,7 +8,7 @@ import { RiCloseCircleLine } from "react-icons/ri";
 const DoctorPage = () => {
   const [doctor, setDoctor] = useState(doctorData);
   const [selectedDoctor, setSelectedDoctor] = useState<null | Doctor>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     document.title = "Doctor's Page";
@@ -21,7 +21,7 @@ const DoctorPage = () => {
 
   const closeModal = () => {
     setSelectedDoctor(null);
-    setIsModalOpen(false);
+    setIsOpen(false);
   };
 
   return (
@@ -68,7 +68,7 @@ const DoctorPage = () => {
           <div className="relative">
             <RiCloseCircleLine
               onClick={closeModal}
-              className="cursor-pointer absolute text-3xl md:text-5xl lg:text-3xl top-2 right-0 stroke-1"
+              className="cursor-pointer absolute text-3xl md:text-5xl lg:text-3xl top-2 right-0 stroke-1 lg:stroke-none text-gray-900 lg:text-gray-500"
             />
             <div className="flex flex-col lg:flex-row text-gray-600">
               <div className="md:mr-6 ">

@@ -1,0 +1,28 @@
+ element {
+     position: relative;
+     width: 200px;
+     height: 100px;
+     overflow: hidden;
+     mask-image: linear-gradient(70deg, transparent 1%, rgba(73, 170, 128, 1) 70%);
+ }
+
+ .element::after {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0%;
+     width: 100%;
+     height: 100%;
+     background-image: linear-gradient(to left, rgba(73, 170, 128, 1), #49aa80);
+ }
+
+ .banner__img {
+     mask-image: linear-gradient(90deg, transparent 10%, rgba(73, 170, 128, 1) 65%);
+     z-index: 1;
+ }
+
+ @media (max-width: 768px) {
+     .banner__img {
+         mask-image: linear-gradient(70deg, transparent 10%, rgba(73, 170, 128, 1) 100%);
+     }
+ }

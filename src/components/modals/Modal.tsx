@@ -1,6 +1,5 @@
 interface CustomModalProps {
   children: React.ReactNode;
-  // closeModal: () => void;
 }
 
 const CustomModal = ({ children }: CustomModalProps) => {

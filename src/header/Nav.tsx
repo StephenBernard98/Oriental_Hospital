@@ -52,7 +52,9 @@ const Nav = () => {
                 <Link to="/doctor">
                   <li className="mr-5 cursor-pointer">Doctors</li>
                 </Link>
+                <Link to="/contact">
                 <li className="mr-5 cursor-pointer">Contact us</li>
+                </Link>
               </ul>
             </div>
             <div className="lg:hidden cursor-pointer ">
@@ -131,16 +133,18 @@ const Nav = () => {
                   </span>
                 </li>
               </Link>
+              <Link to="/contact">
               <li
                 onClick={() => setMobileNav(false)}
                 className="text-xl md:text-3xl font-bold cursor-pointer py-4 flex items-center hover:bg-[#49aa80] hover:text-white/80 duration-500"
-              >
+                >
                 <RiContactsFill className="ml-4 mr-3 text-4xl md:text-5xl" />{" "}
                 <span className="text-xl md:text-2xl font-mooli">
                   {" "}
                   Contact us
                 </span>
               </li>
+                </Link>
             </ul>
           </nav>
         </div>
