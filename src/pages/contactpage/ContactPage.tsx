@@ -1,11 +1,11 @@
-// import { useEffect } from "react";
+import { useEffect } from "react";
 import "../contactpage/contactpage.css";
 
 const ContactPage = () => {
-  // useEffect(() => {
-  //   document.title = "Contact";
-  //   window.scrollTo(0, 0);
-  // }, []);
+  useEffect(() => {
+    document.title = "Contact";
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <main className="mt-[4.5rem] md:mt-20 ">
