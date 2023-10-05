@@ -26,17 +26,17 @@ const ContactPage = () => {
 
         <div className="max-w-[1250px] mx-0 lg:mx-auto lg:mt-14 flex flex-col lg:flex-row justify-around ">
           <div className="max-w-[600px] md:max-w-[1000px]">
-            <div className="flex">
+            <div className="flex w-full">
               <img
                 src="https://www.google.com/maps/d/thumbnail?mid=1zWnl8atc592vcgTEtSDBEw8GVr4&hl=en"
                 alt="hospital-map"
-                className="w-40 "
+                className="w-40 md:w-full md:h-64 lg:w-40 lg:h-40"
               />
               <div className="bg-gray-200 max-w-[300px] p-5">
-                <h1 className="text-green-500 text-lg font-semibold  ">
+                <h1 className="text-green-500 text-lg md:text-xl lg:text-lg  font-semibold  ">
                   Hospital Location
                 </h1>
-                <div className="text-sm leading-9">
+                <div className="text-sm md:text-lg lg:text-base  leading-9">
                   <span className="uppercase text-gray-600 font-semibold">
                     Oriental hospital victoria island,{" "}
                   </span>
@@ -47,7 +47,7 @@ const ContactPage = () => {
               </div>
             </div>
             <div className="p-4 text-gray-600 font-semibold">
-              <h1 className="text-lg  text-primary tracking-wide">
+              <h1 className="text-lg md:text-xl lg:text-lg  text-primary tracking-wide">
                 Office Hours
               </h1>
               <p className="my-2">Monday - Sunday</p>
@@ -61,9 +61,9 @@ const ContactPage = () => {
               </p>
             </div>
           </div>
-          <div className="lg:flex lg:justify-around lg:items-start max-w-[650px] w-full mt-5">
+          <div className="lg:flex lg:justify-around lg:items-start max-w-[650px] md:max-w-[1000px] lg:max-w-[650px] w-full mt-5">
             <div className="flex flex-col justify-between w-full">
-              <form className="text-gray-500">
+              <form className="text-gray-500 mx-4 lg:mx-0">
                 <div className="md:flex md:justify-around md:items-center w-full">
                   <div className="w-full mr-5 uppercase">
                     <label htmlFor="name">First Name:</label> <br />
@@ -71,7 +71,7 @@ const ContactPage = () => {
                       type="text"
                       name="name"
                       id="name"
-                      placeholder="Your Name"
+                      placeholder="first name"
                       className="border-b-[1px] border-b-black py-3 text-black placeholde:text-gray-700 outline-none w-full mb-4 md:mb-0"
                     />
                   </div>
@@ -81,7 +81,7 @@ const ContactPage = () => {
                       type="text"
                       name="name"
                       id="name"
-                      placeholder="Your Name"
+                      placeholder="last name"
                       className="border-b-[1px] border-b-black py-3 text-black placeholde:text-gray-700 outline-none w-full mb-4 md:mb-0"
                     />
                   </div>
@@ -93,8 +93,8 @@ const ContactPage = () => {
                       type="email"
                       name="email"
                       id="email"
-                      placeholder="Your Email"
-                      className="border-b-[1px] border-b-black w-full py-3 text-black placeholde:text-gray-700 outline-none"
+                      placeholder="email address"
+                      className="border-b-[1px] border-b-black w-full py-3 text-black placeholde:text-gray-700 outline-none mb-4 md:mb-0"
                       autoComplete="false"
                     />
                   </div>
@@ -104,7 +104,7 @@ const ContactPage = () => {
                       type="number"
                       name="number"
                       id="number"
-                      placeholder="Your Number"
+                      placeholder="phone no"
                       className="border-b-[1px] border-b-black py-3 text-black placeholde:text-gray-700 outline-none w-full"
                     />
                   </div>
@@ -112,7 +112,7 @@ const ContactPage = () => {
                 <div className="mt-5 uppercase">
                   <label htmlFor="message">Message</label> <br />
                   <textarea
-                    placeholder="Your Message"
+                    placeholder="message"
                     className="w-full mt-3 py-3 border-b-[1px] border-b-black text-black placeholde:text-gray-700 outline-none"
                     name="text"
                     id="text_area"
@@ -121,10 +121,9 @@ const ContactPage = () => {
                   ></textarea>
                 </div>
                 <div className="flex justify-center lg:justify-start">
-                  
-                <button className="bg-primary text-white mt-3 px-11 py-3 lg:mt-3 rounded-md text-center hover:bg-green-700  transition-all duration-300">
-                  SEND
-                </button>
+                  <button className="bg-primary text-white mt-3 px-11 py-3 lg:mt-3 rounded-md text-center hover:bg-green-700  transition-all duration-300">
+                    SEND
+                  </button>
                 </div>
               </form>
             </div>
