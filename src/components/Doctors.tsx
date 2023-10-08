@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Doctors = () => {
   return (
     <section>
@@ -8,7 +10,10 @@ const Doctors = () => {
               Our Medical Team
             </h1>
             <p className="text-center text-white p-2 ">
-              Our medical team is carefully chosen from worldwide experts in the medical industry. From dentist to optician, from gynacologist to peadiatrician. Every single field is covered. Neurosurgeons, optomologist and radiologist. We got you covered.
+              Our medical team is carefully chosen from worldwide experts in the
+              medical industry. From dentist to optician, from gynacologist to
+              peadiatrician. Every single field is covered. Neurosurgeons,
+              optomologist and radiologist. We got you covered.
             </p>
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center mt-9">
@@ -41,6 +46,13 @@ const Doctors = () => {
               <p className="p-1 pb-3 text-lg ">Doctor</p>
             </div>
           </div>
+        </div>
+        <div className="flex justify-center items-center w-full h-full">
+          <Link to="/appointment">
+            <button className=" bg-transparent border-2 rounded border-gray-300 text-white text-lg font-bold my-5 px-5 py-3 border-dashed hover:bg-gray-200 hover:text-primary duration-300 hover:border-solid">
+              Book Appointment
+            </button>
+          </Link>
         </div>
       </div>
     </section>

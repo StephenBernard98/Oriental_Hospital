@@ -11,6 +11,8 @@ import IntensiveCare from "./pages/departmentpage/departments/IntensiveCare";
 import Dentistry from "./pages/departmentpage/departments/Dentistry";
 import DoctorPage from "./pages/doctorpage/DoctorPage";
 import ContactPage from "./pages/contactpage/ContactPage";
+import Appointment from "./components/Appointment";
+import Signin from "./auth/Signin";
 
 function App() {
   return (
@@ -26,7 +28,9 @@ function App() {
         <Route path="/quality-assurance" element={<QualityAssurance />} />
         <Route path="/intensive-care" element={<IntensiveCare />} />
         <Route path="/dentistry" element={<Dentistry />} />
-        <Route path="/contact" element={<ContactPage/>}/>
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/appointment" element={<Appointment />} />
+        <Route path="/signin" element={<Signin />} />
       </Routes>
     </div>
   );

@@ -8,7 +8,6 @@ import { RiCloseCircleLine } from "react-icons/ri";
 const DoctorPage = () => {
   const [doctor, setDoctor] = useState(doctorData);
   const [selectedDoctor, setSelectedDoctor] = useState<null | Doctor>(null);
-  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     document.title = "Doctor's Page";
@@ -21,7 +20,6 @@ const DoctorPage = () => {
 
   const closeModal = () => {
     setSelectedDoctor(null);
-    setIsOpen(false);
   };
 
   return (

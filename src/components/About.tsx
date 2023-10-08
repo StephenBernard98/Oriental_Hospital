@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const About = () => {
   return (
     <main>
@@ -75,7 +77,7 @@ const About = () => {
               </div>
             </div>
           </div>
-          <section>
+          <section className="about">
             <div className="flex flex-col lg:flex-row justify-between items-center ml-7 my-4 mx-4 mt-14">
               <img
                 src="https://www.anda.net.au/wp-content/uploads/2018/11/Nigerian-Doctors-The-Exodus-Will-Be-Televised-2.jpg"
@@ -98,9 +100,11 @@ const About = () => {
                   initiative and field activities in the country.
                 </p>
                 <div className="text-center md:text-left mb-3">
+                  <Link to="/about">
                   <button className="bg-primary text-white py-2 text-lg px-8 font-semibold rounded-lg hover:bg-transparent hover:border hover:border-primary hover:text-primary duration-200 text-center">
                     Read More
                   </button>
+                  </Link>
                 </div>
               </div>
             </div>

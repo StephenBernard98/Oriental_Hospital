@@ -5,3 +5,15 @@ export type Doctor = {
   img: string;
   about: string;
 };
+
+export type User = {
+  name: string;
+};
+
+
+
+export type ProviderFunction = {
+  user: User | null;
+  login: (user: User) => void;
+  logout: () => void;
+}

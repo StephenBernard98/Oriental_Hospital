@@ -1,4 +1,16 @@
+import { useEffect, useState } from "react";
+import { RiCloseCircleLine } from "react-icons/ri";
+
 const Contact = () => {
+  const [video, setVideo] = useState(false);
+  useEffect(() => {
+    const min = 0.15;
+    const secs = min * 60 * 1000;
+    setTimeout(() => {
+      setVideo(true);
+    }, secs);
+  }, []);
+
   return (
     <section>
       <div className=" max-w-[1250px] mx-auto m-16">
@@ -54,6 +66,29 @@ const Contact = () => {
           />
         </div>
       </div>
+
+      {video && (
+        <div className="relative">
+          <div
+            className={`fixed bottom-5 right-2 animate-slideLeftSlow ${
+              !video && "hidden"
+            }`}
+          >
+            <iframe
+              width="400"
+              height="200"
+              src="https://www.youtube.com/embed/wybhg8PQs4Y?si=rLZbmctFlsWpUmH7&autoplay=1&mute=1"
+              title="Dental Health"
+              allow="accelerometer; fullscreen; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            ></iframe>
+            <RiCloseCircleLine
+              onClick={() => setVideo(false)}
+              size={30}
+              className="absolute top-1 right-0 cursor-pointer text-white stroke-[0.4] md:stroke-[0.6] lg:stroke-[0.4]"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };
