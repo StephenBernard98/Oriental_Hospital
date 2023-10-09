@@ -1,14 +1,18 @@
 import { CiMenuFries } from "react-icons/ci";
 import { AiFillHome } from "react-icons/ai";
 import { RiCloseCircleLine, RiContactsFill } from "react-icons/ri";
+import { BiLogOut, BiUserPlus } from "react-icons/bi";
 import { FaUserDoctor, FaHospital } from "react-icons/fa6";
 import { IoMdContact } from "react-icons/io";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/Context";
 
 const Nav = () => {
   const [mobileNav, setMobileNav] = useState(false);
   const [show, handleShow] = useState(false);
+
+  const auth = useAuth();
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -20,6 +24,11 @@ const Nav = () => {
       window.removeEventListener("scroll", () => {});
     };
   }, []);
+
+  const handleClick = () => {
+    auth.logout();
+    setMobileNav(false);
+  };
 
   return (
     <div className="">
@@ -53,8 +62,18 @@ const Nav = () => {
                   <li className="mr-5 cursor-pointer">Doctors</li>
                 </Link>
                 <Link to="/contact">
-                <li className="mr-5 cursor-pointer">Contact us</li>
+                  <li className="mr-5 cursor-pointer">Contact us</li>
                 </Link>
+
+                {!auth.user ? (
+                  <Link to="/signin">
+                    <li className="mr-5 cursor-pointer">Login</li>
+                  </Link>
+                ) : (
+                  <li onClick={auth.logout} className="mr-5 cursor-pointer">
+                    Log out
+                  </li>
+                )}
               </ul>
             </div>
             <div className="lg:hidden cursor-pointer ">
@@ -134,17 +153,44 @@ const Nav = () => {
                 </li>
               </Link>
               <Link to="/contact">
-              <li
-                onClick={() => setMobileNav(false)}
-                className="text-xl md:text-3xl font-bold cursor-pointer py-4 flex items-center hover:bg-[#49aa80] hover:text-white/80 duration-500"
+                <li
+                  onClick={() => setMobileNav(false)}
+                  className="text-xl md:text-3xl font-bold cursor-pointer py-4 flex items-center hover:bg-[#49aa80] hover:text-white/80 duration-500"
                 >
-                <RiContactsFill className="ml-4 mr-3 text-4xl md:text-5xl" />{" "}
-                <span className="text-xl md:text-2xl font-mooli">
-                  {" "}
-                  Contact us
-                </span>
-              </li>
+                  <RiContactsFill className="ml-4 mr-3 text-4xl md:text-5xl" />{" "}
+                  <span className="text-xl md:text-2xl font-mooli">
+                    {" "}
+                    Contact us
+                  </span>
+                </li>
+              </Link>
+              {!auth.user ? (
+                <Link to="/signin">
+                  <li
+                    onClick={() => setMobileNav(false)}
+                    className={`text-xl md:text-3xl font-bold cursor-pointer py-4 flex items-center hover:bg-[#49aa80] hover:text-white/80 duration-500 ${
+                      auth.user ? "hidden" : "block"
+                    }`}
+                  >
+                    <BiUserPlus className="ml-4 mr-3 text-4xl md:text-5xl" />{" "}
+                    <span className="text-xl md:text-2xl font-mooli">
+                      {" "}
+                      Login
+                    </span>
+                  </li>
                 </Link>
+              ) : (
+                <li
+                  onClick={handleClick}
+                  className="text-xl md:text-3xl font-bold cursor-pointer py-4 flex items-center hover:bg-[#49aa80] hover:text-white/80 duration-500"
+                >
+                  <BiLogOut className="ml-4 mr-3 text-4xl md:text-5xl" />
+                  <span className="text-xl md:text-2xl font-mooli">
+                    {" "}
+                    Logout
+                  </span>
+                </li>
+              )}
             </ul>
           </nav>
         </div>

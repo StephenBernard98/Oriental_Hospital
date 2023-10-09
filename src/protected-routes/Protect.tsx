@@ -8,12 +8,13 @@ interface Child {
 
 export const Protect = ({ children }: Child) => {
   const auth = useAuth();
-
   const location = useLocation();
 
   if (!auth.user) {
-    return <Navigate to="/signin" state={{ path: location.pathname }} />;
+    localStorage.setItem("destination", location.pathname);
+    return <Navigate to="/signin" />;
   }
+
   return (
     <>
       <div>{children}</div>

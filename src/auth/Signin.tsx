@@ -1,22 +1,33 @@
 import { FormEvent, useEffect, useState } from "react";
 import { useAuth } from "../context/Context";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { PiEyeClosedLight } from "react-icons/pi";
 import { BiSolidUser } from "react-icons/bi";
 
 const Signin = () => {
   const [user, setUser] = useState<string>("");
   const [password, setPassword] = useState("");
+
   const auth = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     auth.login({ name: user });
-    navigate("/appointment");
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("username", JSON.stringify(user));
+
+    const destination = localStorage.getItem("destination");
+    if (destination) {
+      navigate(destination, { replace: true }); 
+      localStorage.removeItem("destination");
+    } else {
+      window.history.back();
+    }
   };
 
   return (

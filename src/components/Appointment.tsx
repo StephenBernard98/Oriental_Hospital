@@ -34,7 +34,6 @@ const Appointment = () => {
        setDate("");
     }
     setBookDoctor(null);
-   
   };
 
   return (
@@ -95,8 +94,8 @@ const Appointment = () => {
                   <h1 className="m-2 md:m-5 mt-6 font-semibold font-nunito text-center text-2xl text-primary ">
                     Please Fill the Form
                   </h1>
-                  <form onSubmit={handleClick} className="mx-auto px-5 ">
-                    <div className="flex pl-5 items-center mb-4">
+                  <form onSubmit={handleClick} className="mx-auto md:px-5 ">
+                    <div className="flex md:pl-5 items-center mb-4">
                       <label className="text-xl font-bold" htmlFor="hospital">
                         Hospital:
                       </label>
@@ -109,12 +108,12 @@ const Appointment = () => {
                         autoComplete="off"
                       />
                     </div>
-                    <div className="flex pl-5 items-center">
+                    <div className="flex md:pl-5 items-center">
                       <label className="text-xl font-bold " htmlFor="username">
                         Username:
                       </label>
                       <input
-                        className="border-2 caret-transparent rounded disabled w-3/4 ml-[1.55rem] py-2 outline-none px-3 text-extrabold text-xl cursor-not-allowed"
+                        className="border-2 rounded  w-3/4 ml-[1.55rem] py-2 outline-none px-3 text-extrabold text-xl "
                         type="text"
                         name="name"
                         id="name"
@@ -122,7 +121,7 @@ const Appointment = () => {
                         autoComplete="off"
                       />
                     </div>
-                    <div className="flex pl-5 items-center">
+                    <div className="flex md:pl-5 items-center">
                       <label className="text-xl font-bold " htmlFor="username">
                         Email:
                       </label>
@@ -138,7 +137,7 @@ const Appointment = () => {
                       />
                     </div>
 
-                    <div className="flex pl-5 items-center mt-5">
+                    <div className="flex md:pl-5 items-center mt-5">
                       <label className="text-xl font-bold " htmlFor="date">
                         Date:
                       </label>
@@ -153,7 +152,7 @@ const Appointment = () => {
                         required
                       />
                     </div>
-                    <div className="flex pl-5 items-center mt-5">
+                    <div className="flex md:pl-5 items-center mt-5">
                       <label className="text-xl font-bold mr-3" htmlFor="date">
                         Text the Doc:
                       </label>
@@ -193,7 +192,7 @@ const Appointment = () => {
                 <div className="mt-8">
                   <div>
                     <h1 className="text--gray-600">
-                      You have successfully booked {confirmBooking.name}
+                      You have successfully booked {confirmBooking.name} 
                     </h1>
                     <p className="text--gray-600 mt-1 leading-7">
                       The doctor would respond to this booking via the email you
@@ -217,13 +216,20 @@ const Appointment = () => {
         <div>
           {errMsg && (
             <Modal>
-              <div className=" mx-5 my-10 relative">
-                <h1 className="text-lg text-gray-600">Please fill in the email <span className="font-extrabold">and</span> date field</h1>
-                <RiCloseCircleLine
-                  size={40}
-                  className="absolute top-1 right-4 cursor-pointer"
-                  onClick={() => setErrMsg(false)}
-                />
+              <div className=" mx-5">
+                <div className=" my-10">
+                  <h1 className="text-lg text-gray-600">
+                    Please fill in the email{" "}
+                    <span className="font-extrabold">and</span> date field
+                  </h1>
+                  <div className="absolute top-9 lg:top-12 right-4 md:right-20 lg:right-64">
+                    <RiCloseCircleLine
+                      size={40}
+                      className="cursor-pointer"
+                      onClick={() => setErrMsg(false)}
+                    />
+                  </div>
+                </div>
               </div>
             </Modal>
           )}
